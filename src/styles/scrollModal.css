@@ -1,0 +1,25 @@
+.info > p::-webkit-scrollbar {
+    -webkit-appearance: none;
+}
+
+.info > p::-webkit-scrollbar:vertical {
+    width:10px;
+}
+
+.info > p::-webkit-scrollbar-button:increment,.info::-webkit-scrollbar-button {
+    display: none;
+} 
+
+.info > p::-webkit-scrollbar:horizontal {
+    height: 10px;
+}
+
+.info > p::-webkit-scrollbar-thumb {
+    background-color: #797979;
+    border-radius: 20px;
+    border: 2px solid #f1f2f3;
+}
+
+.info > p::-webkit-scrollbar-track {
+    border-radius: 10px;  
+}

@@ -1,0 +1,7 @@
+.containerModel{
+    display: flex;
+    width: 80%;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+}

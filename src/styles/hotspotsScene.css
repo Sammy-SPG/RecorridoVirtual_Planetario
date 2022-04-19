@@ -1,0 +1,23 @@
+.nextTour{
+    background-image: url('../images/icons/icons8-chevron-arriba-en-círculo-50.png');
+    background-color: none;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.hotspot_info{
+    background-image: url('../images/icons/icons8-información-50.png');
+    background-color: none;
+    background-position: center;
+    background-repeat: no-repeat; 
+}
+
+.hotspot .in{
+    background-color: none!important;
+    width: 0!important;
+    height: 0!important;
+}
+
+.hotspot .out{
+    border: none!important;
+}
