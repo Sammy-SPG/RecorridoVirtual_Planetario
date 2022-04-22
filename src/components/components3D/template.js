@@ -52,6 +52,10 @@ export default function Model({model}) {
             const {ModelCoheteSaturnoV} = ModelComponent();
             ModelCoheteSaturnoV(modelGroup);
         }
+        else if(model === 'Astronautas'){
+            const {ModelMooonLanding} = ModelComponent();
+            ModelMooonLanding (modelGroup);
+        }
         else if(model === 'transbordador'){
             const { ModelSpaceShuttle } = ModelComponent();
             ModelSpaceShuttle(modelGroup);
@@ -60,7 +64,28 @@ export default function Model({model}) {
             const {ModelCuriosityRobert} = ModelComponent();
             ModelCuriosityRobert(modelGroup);
         }
+        else if(model === 'EstacionEspacial'){
+            const {ModelSpaceStationInternational} = ModelComponent();
+            ModelSpaceStationInternational(modelGroup);
+        }
+        else if(model === 'colonia'){
+            const {ModelMarsBase} = ModelComponent();
+            ModelMarsBase (modelGroup);
+        }
+        else if(model === "robert"){
+            const {ModelCuriosityRobert} = ModelComponent();
+            ModelCuriosityRobert(modelGroup);
 
+        }else if(model === "FalconHeavy"){
+            const {modelFalconHeavy} = ModelComponent();
+            modelFalconHeavy(modelGroup);
+        }else if(model === "Estructura"){
+            const {ModelCommandModule} = ModelComponent();
+            ModelCommandModule(modelGroup);
+        }else if(model === "domoGeodesico"){
+            const {ModelGeodesicDome} = ModelComponent();
+            ModelGeodesicDome(modelGroup);
+        }
         scene.add(modelGroup);
     }
     const initOrbit = () => {
