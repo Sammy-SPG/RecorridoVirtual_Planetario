@@ -1,5 +1,4 @@
 import images from '../hooks/images';
-
 const [
     defaulScene,
     cosmonautica,
@@ -25,8 +24,8 @@ const Scenes = {
     defaultScene: {
         title: 'Entrada al planetario :)',
         image: defaulScene,
-        pitch: 2,
-        yaw: -7,
+        pitch: -7,
+        yaw: 57,
         hfov: 110,
         hotspot: {
             nextTour: {
@@ -38,11 +37,11 @@ const Scenes = {
         }
     },
     cosmonautica: {
-        title: 'Entrada al planetario :)',
+        title: 'Sala 1- Cosmonautica',
         image: cosmonautica,
         pitch: 2,
         yaw: -7,
-        hfov: 110,
+        hfov: 85,
         hotspot: {
             SaturnoV: {
                 pitch: 1,
@@ -108,11 +107,11 @@ const Scenes = {
         },
     },
     cosmonautica2: {
-        title: 'Cohete saturnoV',
+        title: 'Sala 1- Cosmonautica',
         image: cosmonautica_p2,
-        pitch: 4,
-        yaw: -5,
-        hfov: 110,
+        pitch: -10,
+        yaw: 127,
+        hfov: 85,
         hotspot: {
             SaturnoV: {
                 pitch: -3,
@@ -180,9 +179,9 @@ const Scenes = {
     Tunel: {
         title: 'Pasillo a la sala de Mars',
         image: tunelMarte,
-        pitch: 4,
-        yaw: -5,
-        hfov: 110,
+        pitch: -9,
+        yaw: -4,
+        hfov: 85,
         hotspot: {
             nextTour: {
                 pitch: -28,
@@ -201,9 +200,9 @@ const Scenes = {
     marteInicio: {
         title: 'Inicio de marte',
         image: inicioMarte,
-        pitch: 4,
-        yaw: -5,
-        hfov: 110,
+        pitch: 5,
+        yaw: -2,
+        hfov: 85,
         hotspot: {
             traje: {
                 pitch: 3,
@@ -229,8 +228,8 @@ const Scenes = {
     trajeMars: {
         title: 'Traje espacial para marte',
         image: trajeMarte,
-        pitch: 4,
-        yaw: -5,
+        pitch: -2,
+        yaw: -3,
         hfov: 110,
         hotspot: {
             traje: {
@@ -271,8 +270,8 @@ const Scenes = {
     baseMarte: {
         title: 'Base en marte',
         image: baseMarte,
-        pitch: 4,
-        yaw: -5,
+        pitch: -18,
+        yaw: 175,
         hfov: 110,
         hotspot: {
             robert: {
@@ -313,8 +312,8 @@ const Scenes = {
     robertCuriocity: {
         title: 'Robert Curiosity',
         image: robertCuriocity,
-        pitch: 4,
-        yaw: -5,
+        pitch: 17,
+        yaw: 114,
         hfov: 110,
         hotspot: {
             robert: {
@@ -348,8 +347,8 @@ const Scenes = {
     domoGeodesico: {
         title: 'Domo geodecico',
         image: domoGeodesico,
-        pitch: 4,
-        yaw: -5,
+        pitch: -14,
+        yaw: 126,
         hfov: 110,
         hotspot: {
             nextTour: {
@@ -369,8 +368,8 @@ const Scenes = {
     galeria: {
         title: 'Galeria',
         image: galeria,
-        pitch: 4,
-        yaw: -5,
+        pitch: -15,
+        yaw: 90,
         hfov: 110,
         hotspot: {
             nextTour: {
@@ -481,8 +480,8 @@ const Scenes = {
     Sistem_Mural: {
         title: 'pasillo',
         image: Sistem_Mural,
-        pitch: 4,
-        yaw: -5,
+        pitch: -16,
+        yaw: 4,
         hfov: 110,
         hotspot: {
             nextTour_Mural: {
@@ -514,8 +513,8 @@ const Scenes = {
     Mural: {
         title: 'Sala de espera',
         image: mural,
-        pitch: 4,
-        yaw: -5,
+        pitch: -11,
+        yaw: -169,
         hfov: 110,
         hotspot: {
             nextTour: {
@@ -534,8 +533,8 @@ const Scenes = {
     Telescope: {
         title: 'Telescopios',
         image: telescopios,
-        pitch: 4,
-        yaw: -5,
+        pitch: -15,
+        yaw: 24,
         hfov: 110,
         hotspot: {
             nextTour: {
@@ -557,7 +556,7 @@ const Scenes = {
         image: inicioDomo,
         pitch: 4,
         yaw: -5,
-        hfov: 110,
+        hfov: 80,
         hotspot: {
             nextTour: {
                 pitch: -9,
@@ -576,9 +575,9 @@ const Scenes = {
     Domo: {
         title: 'Domo digital',
         image: Domo,
-        pitch: 4,
-        yaw: -5,
-        hfov: 110,
+        pitch: -34,
+        yaw: -53,
+        hfov: 80,
         hotspot: {
             backTour: {
                 pitch: -56,
@@ -591,9 +590,9 @@ const Scenes = {
     observadores: {
         title: 'Observadores',
         image: observadores,
-        pitch: 4,
-        yaw: -5,
-        hfov: 110,
+        pitch: -32,
+        yaw: 77,
+        hfov: 90,
         hotspot: {
             backTour: {
                 pitch: -24,

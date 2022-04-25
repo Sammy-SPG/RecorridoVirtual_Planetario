@@ -1,47 +1,84 @@
-*{
-    margin: 0;
-    padding: 0;
-  }
-  
-  .container{
-    background-color: #000;
-  }
-  
-  .containerNomenclature{
-    position: absolute;
-    transform: translate(-50%, -50%);
-    left: 50%;
-    top: 50%;
-    text-align: center;
-  }
-  
-  .text{
-    color: #eee;
-    font-family: 'BIZ UDGothic', sans-serif;
-  }
-  
-  .title{
-    margin: 15px;
-    font-size: 3.5rem;
-  }
-  
-  .description{
-    margin: 15px;
-    font-size: 1rem;
-  }
-  
-  .button{
-    background: none;
-    padding: 0.6rem;
-    border: none;
-    border-radius: 5px;
-    box-shadow: 1px 1px 6px rgba(0,0,0);
-    color: #ccc;
-    text-decoration: none;
-  }
-  
-  .button:hover{
-    cursor: pointer;
-    background: rgba(41, 41, 41, 0.8);
-    transform: scale(1.1);
-  }
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  position: absolute;
+  width: 100%;
+}
+
+.container {
+  position: absolute;
+  transform: translate(-50%, 30%);
+  left: 50%;
+  top: 50%;
+  text-align: center;
+}
+
+.containerNavigation {
+  display: flex;
+  flex-direction: column;
+  color: #eee;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.description {
+  margin: 1rem;
+  padding: 2px;
+  font-family: 'Oswald', sans-serif;
+  font-size: 2rem;
+}
+
+.containerNavigation > div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.headerContainer {
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #fff;
+  font-family: 'Ubuntu', sans-serif;
+  background: rgba(41, 127, 185, 0.2);
+}
+
+.headerContainer > h1{
+  font-size: 1.2rem;
+}
+
+.headerContainer > div {
+  width: 25%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.btn_header{
+  text-decoration: none;
+  color: #fff;
+}
+
+.button {
+  background: rgba(0, 0, 0, 0.8);
+  width: 25%;
+  padding: 0.6rem;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 1px 1px 6px rgba(0, 0, 0);
+  color: #eee;
+  font-weight: normal;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-family: sans-serif;
+}
+
+.button:hover {
+  cursor: pointer;
+  background: rgba(41, 41, 41, 0.8);
+  transform: scale(1.1);
+}
