@@ -46,24 +46,42 @@ const dataInfo = {
         }
     },
     marteInicio: {
-        sala: {
-            title: 'El traje de marte',
-            textContent: 'text'
-        }
-    },
-    trajeMars: {
         traje: {
             title: 'El traje de marte',
             textContent: 'text'
         }
     },
-    robertCuriocity: {
+    trajeMars:{
+        traje: {
+            title: 'El traje de marte',
+            textContent: 'text'
+        },
+        colonia:{
+            title: 'base',
+            textContent: 'info'
+        },
+        robert: {
+            title: 'Robert Curiosity',
+            textContent: 'info'
+        }
+    },
+    baseMarte: {
+        colonia:{
+            title: 'base',
+            textContent: 'info'
+        },
         robert: {
             title: 'El robert curiocity',
             textContent: 'info'
         },
-        colonia: {
-            title: 'La colonia en marte',
+        domoGeodesico:{
+            title: 'Domo geodesico',
+            textContent: 'info'
+        }
+    },
+    robertCuriocity: {
+        robert: {
+            title: 'El robert curiocity',
             textContent: 'info'
         },
         domoGeodesico: {
@@ -74,6 +92,48 @@ const dataInfo = {
     marteDomo: {
         domoGeodesico: {
             title: 'El domno geodesico',
+            textContent: 'info'
+        }
+    },
+    sistemaSolar: {
+        sol:{
+            title: 'Sol',
+            textContent: 'info'
+        },
+        mercurio: {
+            title: 'Mercurio',
+            textContent: 'info'
+        },
+        venus:{
+            title: 'Venus',
+            textContent: 'info'
+        },
+        tierra:{
+            title: 'Tierra',
+            textContent: 'info'
+        },
+        marte:{
+            title: 'Marte',
+            textContent: 'info'
+        },
+        jupiter:{
+            title: 'Jupiter',
+            textContent: 'info'
+        },
+        saturno:{
+            title: 'Saturno',
+            textContent: 'info'
+        },
+        urano:{
+            title: 'Urano',
+            textContent: 'info'
+        },
+        neptuno: {
+            title: 'Neptuno',
+            textContent: 'info'
+        },
+        pluton:{
+            title: 'Pluton',
             textContent: 'info'
         }
     }

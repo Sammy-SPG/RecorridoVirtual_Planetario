@@ -46,6 +46,7 @@
     padding: 1.5rem;
     max-width: 30%;
     min-width: 25%;
+    opacity: 0;
 }
 
 .info>h1 {

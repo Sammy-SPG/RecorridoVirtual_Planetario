@@ -5,9 +5,11 @@ import CoheteSaturnoV from './components3D/template';
 import { UseModal } from '../hooks/useModal';
 import dataInfo from '../helpers/dataInfo';
 import dataScene from '../helpers/dataScene';
+import animation from '../hooks/animations';
+import Info from './modalInfo';
+import '../styles/model.css';
 import '../styles/scene.css';
 import '../styles/hotspotsScene.css';
-import '../styles/model.css';
 
 
 let hfovDefault = 110;
@@ -46,7 +48,7 @@ const Scene = () => {
         else setView(true);
     }
     const hotSpotsScene = (element, i) => {
-        if (element.cssClass === 'nextTour') {
+        if (element.cssClass === 'nextTour' || element.cssClass === 'backTour') {
             return (
                 <Pannellum.Hotspot
                     key={i}
@@ -54,7 +56,7 @@ const Scene = () => {
                     pitch={element.pitch}
                     yaw={element.yaw}
                     handleClick={() => { setScene(dataScene[element.tour]); setSceneName(element.tour) }}
-                    cssClass={element.cssClass}
+                    cssClass='nextTour'
                 />
             );
         }
@@ -65,19 +67,8 @@ const Scene = () => {
                     type="custom"
                     pitch={element.pitch}
                     yaw={element.yaw}
-                    handleClick={() => { viewElementInfo(element) }}
+                    handleClick={() => { viewElementInfo(element); animation('.containerInfo')}}
                     cssClass={element.cssClass}
-                />
-            );
-        else if(element.cssClass === 'backTour')
-            return(
-                <Pannellum.Hotspot
-                    key={i}
-                    type="custom"
-                    pitch={element.pitch}
-                    yaw={element.yaw}
-                    handleClick={() => { setScene(dataScene[element.tour]); setSceneName(element.tour) }}
-                    cssClass='nextTour'
                 />
             );
         else return;
@@ -89,20 +80,6 @@ const Scene = () => {
         setPitch(element.pitch);
         setYaw(element.yaw);
         setHfov(element.hfov);
-    }
-
-    const getElementInfo = () => {
-        if (elementInfo === null) {
-            return;
-        } else {
-            return (
-                <div className="info">
-                    <h1>{elementInfo.title}</h1>
-                    <hr />
-                    <p>{elementInfo.textContent}</p>
-                </div>
-            );
-        }
     }
 
     const sateteHfov = () => {
@@ -129,9 +106,9 @@ const Scene = () => {
                 {Object.values(scene.hotspot).map((element, i) => (hotSpotsScene(element, i)))}
             </Pannellum>
 
-            <Modal isOpen={isOpen} closeModal={() => closeModal()} stateHfov={() => sateteHfov()} >
+            <Modal isOpen={isOpen} closeModal={() => closeModal()} stateHfov={() => sateteHfov()}>
                 <div className="containerModel">{isOpen ? <CoheteSaturnoV model={model} /> : null}</div>
-                <div className="containerInfo" ref={infoRef} >{getElementInfo()}</div>
+                <div className="containerInfo" ref={infoRef} >{!isOpen ? null : <Info data = {elementInfo}/>}</div>
             </Modal>
         </div>
     );

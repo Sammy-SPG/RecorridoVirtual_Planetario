@@ -2,7 +2,7 @@ import defaulScene from '../images/tour/Descarga/Inicio.jpg';
 import cosmonautica from '../images/tour/Descarga/Cosmonautica.jpg';
 import cosmonautica_p2 from '../images/tour/Descarga/Cosmonautica_p2.jpg';
 import Cosmonautica_marte from '../images/tour/Descarga/Cosmonautica_Marte.jpg';
-import tunelMarte from '../images/tour/Descarga/TunelMarte.jpeg';
+import tunelMarte from '../images/tour/Descarga/TunelMarte.jpg';
 import inicioMarte from '../images/tour/Descarga/MarteInicio.jpg';
 import trajeMarte from '../images/tour/Descarga/TrajeMarte.jpg';
 import baseMarte from '../images/tour/Descarga/BaseMarte.jpg'

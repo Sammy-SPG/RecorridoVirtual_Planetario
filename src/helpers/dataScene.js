@@ -169,7 +169,7 @@ const Scenes = {
                 cssClass: 'nextTour',
                 tour: 'Tunel'
             },
-            backTour:{
+            backTour: {
                 pitch: -15,
                 yaw: -163,
                 cssClass: 'backTour',
@@ -188,13 +188,13 @@ const Scenes = {
                 pitch: -28,
                 yaw: -3,
                 cssClass: 'nextTour',
-                tour:'marteInicio'
+                tour: 'marteInicio'
             },
-            backTour:{
+            backTour: {
                 pitch: -20,
                 yaw: -171,
                 cssClass: 'backTour',
-                tour:'Cosmo_Mars'
+                tour: 'Cosmo_Mars'
             }
         },
     },
@@ -205,12 +205,12 @@ const Scenes = {
         yaw: -5,
         hfov: 110,
         hotspot: {
-            sala: {
+            traje: {
                 pitch: 3,
                 yaw: -2,
                 hfov: 50,
                 cssClass: 'hotspot_info',
-                hotSpotObj: 'sala',
+                hotSpotObj: 'traje',
             },
             nextTour: {
                 pitch: -25,
@@ -218,7 +218,7 @@ const Scenes = {
                 cssClass: 'nextTour',
                 tour: 'trajeMars'
             },
-            backTour:{
+            backTour: {
                 pitch: -27,
                 yaw: -74,
                 cssClass: 'backTour',
@@ -239,6 +239,20 @@ const Scenes = {
                 hfov: 50,
                 cssClass: 'hotspot_info',
                 hotSpotObj: 'traje',
+            },
+            colonia: {
+                pitch: -13,
+                yaw: 46,
+                hfov: 50,
+                cssClass: 'hotspot_info',
+                hotSpotObj: 'colonia',
+            },
+            robert: {
+                pitch: -10,
+                yaw: 103,
+                hfov: 50,
+                cssClass: 'hotspot_info',
+                hotSpotObj: 'robert',
             },
             nextTour: {
                 pitch: -27,
@@ -276,8 +290,8 @@ const Scenes = {
                 hotSpotObj: 'colonia',
             },
             domoGeodesico: {
-                pitch: 17,
-                yaw: 114,
+                pitch: 0,
+                yaw: -114,
                 hfov: 50,
                 cssClass: 'hotspot_info',
                 hotSpotObj: 'domoGeodesico',
@@ -286,7 +300,7 @@ const Scenes = {
                 pitch: -26,
                 yaw: -65,
                 cssClass: 'nextTour',
-                tour:'robertCuriocity'
+                tour: 'robertCuriocity'
             },
             backTour: {
                 pitch: -26,
@@ -303,6 +317,13 @@ const Scenes = {
         yaw: -5,
         hfov: 110,
         hotspot: {
+            robert: {
+                pitch: -16,
+                yaw: -19,
+                hfov: 50,
+                cssClass: 'hotspot_info',
+                hotSpotObj: 'robert',
+            },
             domoGeodesico: {
                 pitch: 17,
                 yaw: 114,
@@ -369,10 +390,80 @@ const Scenes = {
     sistemaSolar: {
         title: 'Sistema solar',
         image: sistemaSolar,
-        pitch: 4,
-        yaw: -5,
+        pitch: 15,
+        yaw: 161,
         hfov: 110,
         hotspot: {
+            sol: {
+                pitch: -8,
+                yaw: -61,
+                hfov: 50,
+                cssClass: 'hotspot_info',
+                hotSpotObj: 'sol'
+            },
+            mercurio:{
+                pitch: -8,
+                yaw: -100,
+                hfov: 50,
+                cssClass: 'hotspot_info',
+                hotSpotObj: 'mercurio'
+            },
+            venus:{
+                pitch: -7,
+                yaw: -152,
+                hfov: 50,
+                cssClass: 'hotspot_info',
+                hotSpotObj: 'venus'
+            },
+            tierra:{
+                pitch: -9,
+                yaw: 167,
+                hfov: 50,
+                cssClass: 'hotspot_info',
+                hotSpotObj: 'tierra'
+            },
+            marte:{
+                pitch: -10,
+                yaw: 155,
+                hfov: 50,
+                cssClass: 'hotspot_info',
+                hotSpotObj: 'marte'
+            },
+            jupiter: {
+                pitch: 15,
+                yaw: 161,
+                hfov: 50,
+                cssClass: 'hotspot_info',
+                hotSpotObj: 'jupiter'
+            },
+            saturno:{
+                pitch: 22,
+                yaw: 123,
+                hfov: 50,
+                cssClass: 'hotspot_info',
+                hotSpotObj: 'saturno'
+            },
+            urano:{
+                pitch: -4,
+                yaw: 91,
+                hfov: 50,
+                cssClass: 'hotspot_info',
+                hotSpotObj: 'urano'
+            },
+            neptuno:{
+                pitch: -11,
+                yaw: 88,
+                hfov: 50,
+                cssClass: 'hotspot_info',
+                hotSpotObj: 'neptuno'
+            },
+            pluton:{
+                pitch: -9,
+                yaw: 53,
+                hfov: 50,
+                cssClass: 'hotspot_info',
+                hotSpotObj: 'pluton'
+            },
             nextTour: {
                 pitch: -15,
                 yaw: 127,
@@ -410,7 +501,13 @@ const Scenes = {
                 pitch: -17,
                 yaw: -42,
                 cssClass: 'nextTour',
-                tour: 'Domo'
+                tour: 'DomoInicio'
+            },
+            backTour: {
+                pitch: -20,
+                yaw: -90,
+                cssClass: 'backTour',
+                tour: 'sistemaSolar',
             }
         }
     },
@@ -422,9 +519,15 @@ const Scenes = {
         hfov: 110,
         hotspot: {
             nextTour: {
-                pitch: -15,
-                yaw: 127,
+                pitch: -14,
+                yaw: -64,
                 cssClass: 'nextTour',
+            },
+            backTour: {
+                pitch: -12,
+                yaw: -90,
+                cssClass: 'backTour',
+                tour: 'Sistem_Mural'
             }
         }
     },
@@ -437,12 +540,19 @@ const Scenes = {
         hotspot: {
             nextTour: {
                 pitch: -15,
-                yaw: 127,
+                yaw: 24,
                 cssClass: 'nextTour',
+                tour: 'observadores'
+            },
+            backTour: {
+                pitch: -24,
+                yaw: 98,
+                cssClass: 'backTour',
+                tour: 'Sistem_Mural'
             }
         }
     },
-    Domo:{
+    DomoInicio: {
         title: 'Domo digital',
         image: inicioDomo,
         pitch: 4,
@@ -450,9 +560,46 @@ const Scenes = {
         hfov: 110,
         hotspot: {
             nextTour: {
-                pitch: -15,
-                yaw: 127,
+                pitch: -9,
+                yaw: -8,
                 cssClass: 'nextTour',
+                tour: 'Domo'
+            },
+            backTour: {
+                pitch: -41,
+                yaw: 84,
+                cssClass: 'backTour',
+                tour: 'Sistem_Mural'
+            }
+        }
+    },
+    Domo: {
+        title: 'Domo digital',
+        image: Domo,
+        pitch: 4,
+        yaw: -5,
+        hfov: 110,
+        hotspot: {
+            backTour: {
+                pitch: -56,
+                yaw: -53,
+                cssClass: 'backTour',
+                tour: 'DomoInicio'
+            }
+        }
+    },
+    observadores: {
+        title: 'Observadores',
+        image: observadores,
+        pitch: 4,
+        yaw: -5,
+        hfov: 110,
+        hotspot: {
+            backTour: {
+                pitch: -24,
+                yaw: 6,
+                cssClass: 'backTour',
+                tour: 'Telescope'
             }
         }
     }
