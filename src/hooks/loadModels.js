@@ -18,7 +18,8 @@ export default function Model() {
     const ModelCommandModule = (scene) => {
         const gltfLoader = new GLTFLoader();
         gltfLoader.load('./Models/commandModule/scene.gltf', gltf => {
-            gltf.scene.scale.set(0.5, 0.5, 0.5);
+            gltf.scene.scale.set(0.8, 0.8, 0.8);
+            gltf.scene.position.set(0, -1.5, 0);
             scene.add(gltf.scene);
         }, () => {
             console.log('El modelo se sigue cargando');
@@ -45,6 +46,7 @@ export default function Model() {
         const gltfLoader = new GLTFLoader();
         gltfLoader.load('./Models/FalconHeavy/fh-block-5.gltf', gltf => {
             gltf.scene.position.set(0, -3, 0);
+            gltf.scene.scale.set(0.8, 0.8, 0.8);
             scene.add(gltf.scene);
         }, () => {
             console.log('El modelo se sigue cargando');
@@ -82,7 +84,8 @@ export default function Model() {
     const ModelMooonLanding = (scene) => {
         const gltfLoader = new GLTFLoader();
         gltfLoader.load('./Models/moonLoading/scene.gltf', (gltf) => {
-            gltf.scene.scale.set(0.5, 0.5, 0.5);
+            gltf.scene.scale.set(1.2, 1.2, 1.2);
+            gltf.scene.position.set(-1, 0.5, 0);
             scene.add(gltf.scene);
         }, () => {
             console.log('El modelo se sigue cargando');
@@ -107,7 +110,8 @@ export default function Model() {
     const ModelSpaceStationInternational = (scene) => {
         const gltfLoader = new GLTFLoader();
         gltfLoader.load('./Models/SpaceStationInternational/scene.gltf', (gltf) => {
-            gltf.scene.scale.set(10, 10, 10);
+            gltf.scene.scale.set(11, 11, 11);
+            gltf.scene.position.set(0, 1, 0);
             scene.add(gltf.scene);
         }, () => {
             console.log('El modelo se sigue cargando');
@@ -119,7 +123,8 @@ export default function Model() {
     const ModelMarsSuite = (scene) => {
         const gltfLoader = new GLTFLoader();
         gltfLoader.load('./Models/marsSuit/scene.gltf', (gltf) => {
-            gltf.scene.scale.set(0.04, 0.04, 0.04);
+            gltf.scene.scale.set(0.03, 0.03, 0.03);
+            gltf.scene.position.set(0, -2.5, 0);
             scene.add(gltf.scene);
         }, () => {
             console.log('El modelo se sigue cargando');

@@ -8,7 +8,7 @@ export default function Modal(props){
         event.stopPropagation();
     }
         return (
-            <article className={props.isOpen ? 'modal is-open' : 'modal'} onClick={props.closeModal}>
+            <article className={props.isOpen ? 'modal is-open' : 'modal'} onClick={() => {props.closeModal(); props.stateHfov();}}>
                 <button
                     className="modal-close"
                     onClick={() => {props.closeModal(); props.stateHfov(); }}

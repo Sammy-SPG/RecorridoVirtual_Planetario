@@ -22,16 +22,16 @@
   color: #eee;
   font-size: 1.5rem;
   font-weight: bold;
+  font-family: 'Oswald', sans-serif;
+  font-size: 2rem;
 }
 
 .description {
   margin: 1rem;
   padding: 2px;
-  font-family: 'Oswald', sans-serif;
-  font-size: 2rem;
 }
 
-.containerNavigation > div {
+.containerNavigation>div {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
@@ -47,38 +47,57 @@
   background: rgba(41, 127, 185, 0.2);
 }
 
-.headerContainer > h1{
+.Title {
   font-size: 1.2rem;
+  margin-left: 5rem;
 }
 
 .headerContainer > div {
-  width: 25%;
+  width: 30%;
   display: flex;
   justify-content: space-evenly;
 }
 
-.btn_header{
+.container-btn{
+  margin-right: 10px;
+  display: flex;
+}
+
+.btn_header {
   text-decoration: none;
   color: #fff;
 }
 
-.button {
-  background: rgba(0, 0, 0, 0.8);
-  width: 25%;
-  padding: 0.6rem;
-  padding: 0.5rem;
-  border: none;
-  border-radius: 5px;
-  box-shadow: 1px 1px 6px rgba(0, 0, 0);
-  color: #eee;
-  font-weight: normal;
-  text-decoration: none;
-  font-size: 1.1rem;
-  font-family: sans-serif;
+.imgHeader_Logo{
+  vertical-align: middle;
+  position: absolute;
+  width: 120px;
+  top: 2px;
+  left: 0;
 }
 
-.button:hover {
-  cursor: pointer;
-  background: rgba(41, 41, 41, 0.8);
-  transform: scale(1.1);
+.imgHeader{
+  vertical-align: middle;
+  margin-right: 5px;
+  width: 22px;
+}
+
+.button {
+  display: block;
+  width: 25%;
+  padding: 0.5rem;
+  font-size: 1.3rem;
+  text-decoration: none;
+  background-color: #000;
+  color: #eee;
+  border: solid 1px #fff;
+  box-shadow: 10px 10px 0 #fff;
+}
+
+.button:hover{
+  transform: scale(1.03);
+  background-color: #fff;
+  color: #292929;
+  border: solid 1px #000;
+  box-shadow: 10px 10px 0 #000;
 }

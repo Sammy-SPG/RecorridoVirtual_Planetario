@@ -85,12 +85,12 @@ const Scenes = {
                 cssClass: 'hotspot_info',
                 hotSpotObj: 'Estructura',
             },
-            alunizaje: {
+            Astronautas: {
                 pitch: -8,
                 yaw: -42,
                 hfov: 50,
                 cssClass: 'hotspot_info',
-                hotSpotObj: 'alunizaje',
+                hotSpotObj: 'Astronautas',
             },
             nextTour: {
                 pitch: -18,
@@ -127,6 +127,27 @@ const Scenes = {
                 cssClass: 'hotspot_info',
                 hotSpotObj: 'Astronautas',
             },
+            transbordador: {
+                pitch: -11,
+                yaw: -33,
+                hfov: 50,
+                cssClass: 'hotspot_info',
+                hotSpotObj: 'transbordador',
+            },
+            Curiosity: {
+                pitch: -13,
+                yaw: -41,
+                hfov: 50,
+                cssClass: 'hotspot_info',
+                hotSpotObj: 'Curiosity',
+            },
+            FalconHeavy: {
+                pitch: -12,
+                yaw: -50,
+                hfov: 50,
+                cssClass: 'hotspot_info',
+                hotSpotObj: 'FalconHeavy',
+            },
             EstacionEspacial: {
                 pitch: -14,
                 yaw: -75,
@@ -155,12 +176,12 @@ const Scenes = {
         yaw: -52,
         hfov: 110,
         hotspot: {
-            Mars: {
+            marte: {
                 pitch: -5,
                 yaw: -52,
                 hfov: 50,
                 cssClass: 'hotspot_info',
-                hotSpotObj: 'Mars',
+                hotSpotObj: 'marte',
             },
             nextTour: {
                 pitch: -16,
@@ -246,12 +267,12 @@ const Scenes = {
                 cssClass: 'hotspot_info',
                 hotSpotObj: 'colonia',
             },
-            robert: {
+            Curiosity: {
                 pitch: -10,
                 yaw: 103,
                 hfov: 50,
                 cssClass: 'hotspot_info',
-                hotSpotObj: 'robert',
+                hotSpotObj: 'Curiosity',
             },
             nextTour: {
                 pitch: -27,
@@ -274,12 +295,12 @@ const Scenes = {
         yaw: 175,
         hfov: 110,
         hotspot: {
-            robert: {
+            Curiosity: {
                 pitch: -18,
                 yaw: -3,
                 hfov: 50,
                 cssClass: 'hotspot_info',
-                hotSpotObj: 'robert',
+                hotSpotObj: 'Curiosity',
             },
             colonia: {
                 pitch: -16,
@@ -316,12 +337,12 @@ const Scenes = {
         yaw: 114,
         hfov: 110,
         hotspot: {
-            robert: {
+            Curiosity: {
                 pitch: -16,
                 yaw: -19,
                 hfov: 50,
                 cssClass: 'hotspot_info',
-                hotSpotObj: 'robert',
+                hotSpotObj: 'Curiosity',
             },
             domoGeodesico: {
                 pitch: 17,

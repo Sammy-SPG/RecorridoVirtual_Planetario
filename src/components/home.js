@@ -1,37 +1,43 @@
 import React, { useRef, useEffect } from 'react';
 import * as THREE from 'three';
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
+import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 import { FontLoader } from 'three/examples/jsm/loaders/FontLoader';
 import { TextGeometry } from 'three/examples/jsm/geometries/TextGeometry';
 import Header from './header';
 import Navigation from './navigation';
-import '../styles/home.css';
 
 export default function Model() {
+    require('../styles/home.css');
     const montRef = useRef(null);
     const scene = new THREE.Scene();
     const renderer = new THREE.WebGLRenderer({ antialias: false, powerPreference: "high-performance", precision: 'lowp', animation: true });
-    const camera = new THREE.PerspectiveCamera(25, window.innerWidth / window.innerHeight, 0.1, 100);
+    const camera = new THREE.PerspectiveCamera(25, window.innerWidth / window.innerHeight, 1, 100);
     const clock = new THREE.Clock();
     const modelGroup = new THREE.Group();
     const modelAstronautaGrup = new THREE.Group();
-    let controls;
+    let orbitControls, currentRef;
+    
     useEffect(() => {
-        const currentRef = montRef.current;
-        createScene(currentRef);
+        createScene();
+        initRenderer(currentRef);
+        initCamera();
         return () => {
-            controls.dispose();
+            currentRef.removeChild(renderer.domElement);
+            orbitControls.dispose();
+            for (let i = modelGroup.children.length - 1; i >= 0; i--) {
+                let obj = modelGroup.children[i];
+                modelGroup.remove(obj);
+            }
             for (let i = scene.children.length - 1; i >= 0; i--) {
-                const obj = scene.children[i];
+                let obj = scene.children[i];
                 scene.remove(obj);
             }
-            currentRef.removeChild(renderer.domElement);
         };
     },[]);
 
-    const createScene = (currentRef) => {
-        const { clientWidth: width, clientHeight: height } = currentRef;
+    const createScene = () => {
+        currentRef = montRef.current;
         const light = new THREE.PointLight(0xF9E79F, 2);
         const ambientLight = new THREE.AmbientLight(0xAED6F1, 1);
 
@@ -40,22 +46,30 @@ export default function Model() {
         scene.add(ambientLight);
         scene.add(light)
         scene.add(camera);
-        renderer.setSize(width, height);
         currentRef.appendChild(renderer.domElement);
-        controls = new OrbitControls(camera, renderer.domElement);
-        controls.enableDamping = true;
+        initOrbit();
         Modelheart();
         modelText();
         modelAstronauta();
-        initCamera();
         particles();
         animate();
+    }
+
+    const initRenderer = (currentRef) => {
+        const { clientWidth: width, clientHeight: height } = currentRef;
+        renderer.setSize(width, height);
     }
 
     const initCamera = () => {
         camera.position.z = 35;
         camera.position.x = 0;
         camera.position.y = 0;
+    }
+
+    const initOrbit = () => {
+        orbitControls = new OrbitControls(camera, renderer.domElement);
+        orbitControls.enableDamping = true;
+        orbitControls.maxDistance = 50;
     }
 
     const Modelheart = () => {
@@ -82,7 +96,7 @@ export default function Model() {
             });
 
             const textMesh = new THREE.Mesh(geometry, [
-                new THREE.MeshPhongMaterial({ color: 0x8E44AD }), //font
+                new THREE.MeshPhongMaterial({ color: 0xffffff }), //font
                 new THREE.MeshPhongMaterial({ color: 0x7D3C98 }) //side
             ]);
 
@@ -109,7 +123,7 @@ export default function Model() {
     }
 
     const particles = () => {
-        const sprite = new THREE.TextureLoader().load('./Models/Inicio/particle/disc.png');
+        const sprite = new THREE.TextureLoader().load('./Models/Inicio/particle/yellow.png');
         const count = 2000;
         const particlesPositions = new Float32Array(count * 3);
         for (let i = 0; i < count * 3; i++) {
@@ -129,18 +143,18 @@ export default function Model() {
         modelGroup.rotation.z = elapsedTime * 0.1;
         modelAstronautaGrup.rotation.z = elapsedTime * 0.8;
         renderer.render(scene, camera);
-        controls.update();
+        orbitControls.update();
         requestAnimationFrame(animate)
     }
 
     return (
         <div ref={montRef} style={{ width: '100%', height: '100vh' }}>
-          <div className="header">
-            <Header/>
-          </div>
-          <div className="container">
-            <Navigation/>
-          </div>
+            <div className="header">
+                <Header />
+            </div>
+            <div className="container">
+                <Navigation />
+            </div>
         </div>
     );
 }

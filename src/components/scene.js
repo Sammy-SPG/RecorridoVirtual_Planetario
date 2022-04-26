@@ -5,16 +5,12 @@ import CoheteSaturnoV from './components3D/template';
 import { UseModal } from '../hooks/useModal';
 import dataInfo from '../helpers/dataInfo';
 import dataScene from '../helpers/dataScene';
-import animation from '../hooks/animations';
 import Info from './modalInfo';
 import '../styles/model.css';
 import '../styles/scene.css';
 import '../styles/hotspotsScene.css';
 
-
-let hfovDefault = 110;
-
-const Scene = () => {
+export default function Scene () {
     const infoRef = useRef();
     const containerRef = useRef();
     const { isOpen, openModal, closeModal } = UseModal(false);
@@ -36,7 +32,7 @@ const Scene = () => {
         window.addEventListener('orientationchange', (e) => handleOrientationChange(e));
         return () => {
             window.removeEventListener('orientationchange', handleOrientationChange);
-            for(const i = main.children.length - 1; i >= 0; i--){
+            for(let i = main.children.length - 1; i >= 0; i--){
                 main.removeChild(main.children[i]);
             }
         }
@@ -55,7 +51,7 @@ const Scene = () => {
                     type="custom"
                     pitch={element.pitch}
                     yaw={element.yaw}
-                    handleClick={() => { setScene(dataScene[element.tour]); setSceneName(element.tour) }}
+                    handleClick={() => { setScene(dataScene[element.tour]); setSceneName(element.tour); setYaw(null); setPitch(null);}}
                     cssClass='nextTour'
                 />
             );
@@ -67,7 +63,7 @@ const Scene = () => {
                     type="custom"
                     pitch={element.pitch}
                     yaw={element.yaw}
-                    handleClick={() => { viewElementInfo(element); animation('.containerInfo')}}
+                    handleClick={() => { viewElementInfo(element) }}
                     cssClass={element.cssClass}
                 />
             );
@@ -83,7 +79,7 @@ const Scene = () => {
     }
 
     const sateteHfov = () => {
-        setHfov(hfovDefault);
+        setHfov(scene.hfov);
     }
 
     return (
@@ -113,4 +109,3 @@ const Scene = () => {
         </div>
     );
 }
-export default Scene;

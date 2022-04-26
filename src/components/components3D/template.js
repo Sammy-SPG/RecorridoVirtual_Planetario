@@ -12,9 +12,9 @@ export default function Model({ model }) {
     const modelGroup = new THREE.Group();
     const clock = new THREE.Clock();
     let currentRef, orbitControls, timer = null;
+
     useEffect(() => {
-        currentRef = mountRef.current;
-        createScene(currentRef);
+        createScene();
         initRenderer(currentRef);
         initCamera();
         Carga();
@@ -23,16 +23,17 @@ export default function Model({ model }) {
         return () => {
             currentRef.removeChild(renderer.domElement);
             orbitControls.dispose();
-                for (let i = modelGroup.children.length - 1; i >= 0; i--) {
-                    let obj = modelGroup.children[i];
-                    modelGroup.remove(obj);
-                }
-                for (let i = scene.children.length - 1; i >= 0; i--) {
-                    let obj = scene.children[i];
-                    scene.remove(obj);
-                }
+            for (let i = modelGroup.children.length - 1; i >= 0; i--) {
+                let obj = modelGroup.children[i];
+                modelGroup.remove(obj);
+            }
+            for (let i = scene.children.length - 1; i >= 0; i--) {
+                let obj = scene.children[i];
+                scene.remove(obj);
+            }
         };
     }, []);
+
     const handleChange = () => {
         renderer.setPixelRatio(window.devicePixelRatio * 0.4);
     }
@@ -40,6 +41,7 @@ export default function Model({ model }) {
         renderer.setPixelRatio(window.devicePixelRatio * 1);
     }
     const createScene = () => {
+        currentRef = mountRef.current;
         const ambientLight = new THREE.AmbientLight(0xeeeeee, 0.8);
         const pointLight = new THREE.PointLight(0xffffff, 0.5);
 
@@ -70,9 +72,6 @@ export default function Model({ model }) {
         } else if (model === 'colonia') {
             const { ModelMarsBase } = ModelComponent();
             ModelMarsBase(modelGroup);
-        } else if (model === "robert") {
-            const { ModelCuriosityRobert } = ModelComponent();
-            ModelCuriosityRobert(modelGroup);
         } else if (model === "FalconHeavy") {
             const { modelFalconHeavy } = ModelComponent();
             modelFalconHeavy(modelGroup);
@@ -85,34 +84,32 @@ export default function Model({ model }) {
         } else if (model === "traje") {
             const { ModelMarsSuite } = ModelComponent();
             ModelMarsSuite(modelGroup);
-            const {ModelSol} = ModelComponent();
+        } else if (model === 'sol') {
+            const { ModelSol } = ModelComponent();
             ModelSol(modelGroup);
-        }else if(model === 'sol'){
-            const {ModelSol} = ModelComponent();
-            ModelSol(modelGroup);
-        }else if(model === 'mercurio'){
-            const {ModelMercurio} = ModelComponent();
+        } else if (model === 'mercurio') {
+            const { ModelMercurio } = ModelComponent();
             ModelMercurio(modelGroup);
-        }else if(model === 'venus'){
-            const {ModelVenus} = ModelComponent();
+        } else if (model === 'venus') {
+            const { ModelVenus } = ModelComponent();
             ModelVenus(modelGroup);
-        }else if(model === 'tierra'){
-            const {ModelTierra} = ModelComponent();
+        } else if (model === 'tierra') {
+            const { ModelTierra } = ModelComponent();
             ModelTierra(modelGroup);
-        }else if(model === 'marte'){
-            const {ModelMarte} = ModelComponent();
+        } else if (model === 'marte') {
+            const { ModelMarte } = ModelComponent();
             ModelMarte(modelGroup);
-        }else if(model === 'jupiter'){
-            const {ModelJupiter} = ModelComponent();
+        } else if (model === 'jupiter') {
+            const { ModelJupiter } = ModelComponent();
             ModelJupiter(modelGroup);
-        }else if(model === 'saturno'){
-            const {ModelSaturno} = ModelComponent();
+        } else if (model === 'saturno') {
+            const { ModelSaturno } = ModelComponent();
             ModelSaturno(modelGroup);
-        }else if(model === 'urano'){
-            const {ModelUrano} = ModelComponent();
+        } else if (model === 'urano') {
+            const { ModelUrano } = ModelComponent();
             ModelUrano(modelGroup);
-        }else if(model === 'neptuno'){
-            const {ModelNeptuno} = ModelComponent();
+        } else if (model === 'neptuno') {
+            const { ModelNeptuno } = ModelComponent();
             ModelNeptuno(modelGroup);
         }
         scene.add(modelGroup);
@@ -124,8 +121,26 @@ export default function Model({ model }) {
     }
     const animate = () => {
         const elapsedTime = clock.getElapsedTime();
-        if (model === 'SaturnoV') orbitControls.autoRotate = true;
-        else if (model === 'transbordador') modelGroup.rotation.z = Math.sin(elapsedTime - (elapsedTime * 0.5));
+        if (model === 'transbordador') modelGroup.rotation.z = Math.sin(elapsedTime - (elapsedTime * 0.5));
+        else if (
+            model === 'SaturnoV' ||
+            model === 'Curiosity' ||
+            model === 'FalconHeavy' ||
+            model === 'EstacionEspacial' ||
+            model === 'Estructura' ||
+            model === 'Astronautas' ||
+            model === 'marte' ||
+            model === 'traje' ||
+            model === 'colonia' ||
+            model === 'domoGeodesico' ||
+            model === 'sol' ||
+            model === 'mercurio' ||
+            model === 'venus' ||
+            model === 'tierra' ||
+            model === 'jupiter' ||
+            model === 'urano' ||
+            model === 'neptuno'
+        ) orbitControls.autoRotate = true;
         orbitControls.update();
         renderer.render(scene, camera);
         requestAnimationFrame(animate);
@@ -149,7 +164,7 @@ export default function Model({ model }) {
         <div
             className='Contenedor3D'
             ref={mountRef}
-            style={{ width: "100%", height: "90vh" }}
+            style={{ width: "100%", height: "90vh", display: "flex", justifyContent: "center", alignItems: "center" }}
         >
             <Load />
         </div>
