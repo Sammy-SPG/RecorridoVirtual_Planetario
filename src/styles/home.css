@@ -8,9 +8,13 @@
   width: 100%;
 }
 
+.header > div {
+  width: 100%;
+}
+
 .container {
   position: absolute;
-  transform: translate(-50%, 30%);
+  transform: translate(-50%, 0%);
   left: 50%;
   top: 50%;
   text-align: center;
@@ -71,7 +75,7 @@
 .imgHeader_Logo{
   vertical-align: middle;
   position: absolute;
-  width: 120px;
+  width: 7rem;
   top: 2px;
   left: 0;
 }
@@ -79,7 +83,7 @@
 .imgHeader{
   vertical-align: middle;
   margin-right: 5px;
-  width: 22px;
+  width: 1.2rem;
 }
 
 .button {
@@ -101,3 +105,4 @@
   border: solid 1px #000;
   box-shadow: 10px 10px 0 #000;
 }
+

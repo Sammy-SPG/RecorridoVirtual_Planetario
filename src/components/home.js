@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import * as THREE from 'three';
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
@@ -9,6 +9,8 @@ import Navigation from './navigation';
 
 export default function Model() {
     require('../styles/home.css');
+    require('../styles/responsiveDesign_Home.css');
+    
     const montRef = useRef(null);
     const scene = new THREE.Scene();
     const renderer = new THREE.WebGLRenderer({ antialias: false, powerPreference: "high-performance", precision: 'lowp', animation: true });
@@ -16,15 +18,48 @@ export default function Model() {
     const clock = new THREE.Clock();
     const modelGroup = new THREE.Group();
     const modelAstronautaGrup = new THREE.Group();
-    let orbitControls, currentRef;
-    
+    let orbitControls, currentRef, view = window.matchMedia("(orientation: portrait)").matches;
+    const [width, setWidth] = useState(window.innerWidth);
+
     useEffect(() => {
-        createScene();
-        initRenderer(currentRef);
-        initCamera();
+        (() => {
+            if (!view) {
+                createScene();
+                initRenderer(currentRef);
+                initCamera();
+            } else window.location.reload();
+        })();
+        window.addEventListener('resize', handleResize);
         return () => {
             currentRef.removeChild(renderer.domElement);
             orbitControls.dispose();
+            window.removeEventListener('resize', handleResize);
+            for (let i = modelGroup.children.length - 1; i >= 0; i--) {
+                let obj = modelGroup.children[i];
+                modelGroup.remove(obj);
+            }
+            for (let i = scene.children.length - 1; i >= 0; i--) {
+                let obj = scene.children[i];
+                scene.remove(obj);
+            }
+            window.location.reload();
+        };
+    }, []);
+
+
+    useEffect(() => {
+        (() => {
+            if (!view) {
+                createScene();
+                initRenderer(currentRef);
+                initCamera();
+            } else window.location.reload();
+        })();
+        window.addEventListener('resize', handleResize);
+        return () => {
+            currentRef.removeChild(renderer.domElement);
+            orbitControls.dispose();
+            window.removeEventListener('resize', handleResize);
             for (let i = modelGroup.children.length - 1; i >= 0; i--) {
                 let obj = modelGroup.children[i];
                 modelGroup.remove(obj);
@@ -34,7 +69,14 @@ export default function Model() {
                 scene.remove(obj);
             }
         };
-    },[]);
+    }, [width]);
+
+    const handleResize = () => {
+        view = window.matchMedia("(orientation: portrait)").matches;
+        setWidth(window.innerWidth);
+    }
+
+    if (view) return <div>Coloque el dispositivo en Horizontal</div>
 
     const createScene = () => {
         currentRef = montRef.current;
@@ -89,7 +131,7 @@ export default function Model() {
     const modelText = () => {
         const loader = new FontLoader();
         loader.load('./Models/inicio/text/openSans_Bold.json', (font) => {
-            const geometry = new TextGeometry('Planetario Digital Chimalhuacan', {
+            const geometry = new TextGeometry('Planetario Digital Chimalhuacán', {
                 font: font,
                 size: 1,
                 height: 0.1,

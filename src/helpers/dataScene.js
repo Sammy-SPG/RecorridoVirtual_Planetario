@@ -421,28 +421,28 @@ const Scenes = {
                 cssClass: 'hotspot_info',
                 hotSpotObj: 'sol'
             },
-            mercurio:{
+            mercurio: {
                 pitch: -8,
                 yaw: -100,
                 hfov: 50,
                 cssClass: 'hotspot_info',
                 hotSpotObj: 'mercurio'
             },
-            venus:{
+            venus: {
                 pitch: -7,
                 yaw: -152,
                 hfov: 50,
                 cssClass: 'hotspot_info',
                 hotSpotObj: 'venus'
             },
-            tierra:{
+            tierra: {
                 pitch: -9,
                 yaw: 167,
                 hfov: 50,
                 cssClass: 'hotspot_info',
                 hotSpotObj: 'tierra'
             },
-            marte:{
+            marte: {
                 pitch: -10,
                 yaw: 155,
                 hfov: 50,
@@ -456,28 +456,28 @@ const Scenes = {
                 cssClass: 'hotspot_info',
                 hotSpotObj: 'jupiter'
             },
-            saturno:{
+            saturno: {
                 pitch: 22,
                 yaw: 123,
                 hfov: 50,
                 cssClass: 'hotspot_info',
                 hotSpotObj: 'saturno'
             },
-            urano:{
+            urano: {
                 pitch: -4,
                 yaw: 91,
                 hfov: 50,
                 cssClass: 'hotspot_info',
                 hotSpotObj: 'urano'
             },
-            neptuno:{
+            neptuno: {
                 pitch: -11,
                 yaw: 88,
                 hfov: 50,
                 cssClass: 'hotspot_info',
                 hotSpotObj: 'neptuno'
             },
-            pluton:{
+            pluton: {
                 pitch: -9,
                 yaw: 53,
                 hfov: 50,
@@ -538,9 +538,57 @@ const Scenes = {
         yaw: -169,
         hfov: 110,
         hotspot: {
+            parker: {
+                pitch: -12,
+                yaw: 99,
+                cssClass: 'hotspot_info',
+                hotSpotObj: 'parker',
+            },
+            yuriGagarin: {
+                pitch: -8,
+                yaw: 126,
+                cssClass: 'hotspot_info',
+                hotSpotObj: 'yuriGagarin',
+            },
+            astronauta: {
+                pitch: -9,
+                yaw: 170,
+                cssClass: 'hotspot_info',
+                hotSpotObj: 'astronauta',
+            },
+            sputnik: {
+                pitch: -20,
+                yaw: -147,
+                cssClass: 'hotspot_info',
+                hotSpotObj: 'sputnik',
+            },
+            valentina: {
+                pitch: -9,
+                yaw: 170,
+                cssClass: 'hotspot_info',
+                hotSpotObj: 'astronauta',
+            },
+            ham: {
+                pitch: -16,
+                yaw: -97,
+                cssClass: 'hotspot_info',
+                hotSpotObj: 'ham',
+            },
+            felicette: {
+                pitch: -11,
+                yaw: -100,
+                cssClass: 'hotspot_info',
+                hotSpotObj: 'felicette',
+            },
+            cassini: {
+                pitch: 3,
+                yaw: -109,
+                cssClass: 'hotspot_info',
+                hotSpotObj: 'cassini',
+            },
             nextTour: {
-                pitch: -14,
-                yaw: -64,
+                pitch: -13,
+                yaw: -116,
                 cssClass: 'nextTour',
             },
             backTour: {

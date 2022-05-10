@@ -7,7 +7,7 @@ export default function carousel() {
         <Carousel variant="dark" fade={true} >
             <Carousel.Item>
                 <img
-                    style={{width: '100%', height: '100vh'}}
+                    className='img_carousel'
                     src={require('../images/carousel/image1.png')}
                     alt="First slide"
                 />
@@ -18,7 +18,7 @@ export default function carousel() {
             </Carousel.Item>
             <Carousel.Item>
                 <img
-                    style={{width: '100%', height: '100vh'}}
+                    className='img_carousel'
                     src={require('../images/carousel/image2.png')}
                     alt="Second slide"
                 />
@@ -29,7 +29,7 @@ export default function carousel() {
             </Carousel.Item>
             <Carousel.Item>
                 <img
-                    style={{width: '100%', height: '100vh'}}
+                    className='img_carousel'
                     src={require('../images/carousel/image3.png')}
                     alt="Third slide"
                 />

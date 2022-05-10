@@ -11,13 +11,20 @@ export default function Info({ data }) {
                 InfoCurrent.removeChild(obj);
             }
         }
-    },[])
+    },[]);
 
     return (
         <div className="info" ref = {refInfo}>
             <h1>{data.title}</h1>
             <hr />
             <p>{data.textContent}</p>
+            <p><a href = {data.link} target='_blank' rel='noopener noreferrer'>Mas informacion</a></p>
+            <div className='contact'>
+                <h3>Modelo: {data.autor.title}</h3>
+                <div>
+                    <p className='autor'>Autor: <a href={data.autor.contact} target='_blank' rel='noopener noreferrer' >{data.autor.autor}</a></p>
+                </div>
+            </div>
         </div>
     )
 }
